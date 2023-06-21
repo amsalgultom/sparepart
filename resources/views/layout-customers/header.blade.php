@@ -109,7 +109,7 @@
 							<ul>
 								@if(Auth::user())
 								<li>
-									<a href="{{ route('items.carts',Auth::user()->id) }}"><i class="pe-7s-shopbag"></i></a>
+									<a href="{{ route('carts.index',Auth::user()->id) }}"><i class="pe-7s-shopbag"></i></a>
 								</li>
 								@else
 								<li>

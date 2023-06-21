@@ -54,6 +54,12 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6">
                 <div class="form-group">
+                    <strong>Berat:</strong>
+                    <input type="number" name="weight" class="form-control" required>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6">
+                <div class="form-group">
                     <strong>Brand:</strong>
                     <input type="text" name="brand" class="form-control" required>
                 </div>

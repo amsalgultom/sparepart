@@ -43,7 +43,7 @@ class CartController extends Controller
 
         Cart::create($request->all());
 
-        return redirect()->route('items.carts', $request->user_id)->with('success', 'item to cart successfully.');
+        return redirect()->route('carts.index', $request->user_id)->with('success', 'item to cart successfully.');
     }
 
     /**
@@ -53,7 +53,7 @@ class CartController extends Controller
     {
         $itemDelete = Cart::findOrFail($request->id);
         $itemDelete->delete();
-        return redirect()->route('items.carts', $request->user_id)->with('success', 'item to cart successfully.');
+        return redirect()->route('carts.index', $request->user_id)->with('success', 'item to cart successfully.');
     }
 
     /**
@@ -71,6 +71,6 @@ class CartController extends Controller
         $cart->qty = $request->update_qty;
         $cart->save();
 
-        return redirect()->route('items.carts', $request->update_user_id)->with('success', 'item update cart successfully.');
+        return redirect()->route('carts.index', $request->update_user_id)->with('success', 'item update cart successfully.');
     }
 }

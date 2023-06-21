@@ -36,7 +36,7 @@
 						<hr />
 
 
-						<form action="{{ route('items.store') }}" method="POST">
+						<form action="{{ route('carts.store') }}" method="POST">
 							@csrf
 							<div class="color-brand clearfix">
 								<div class="s-select s-plus-minus">

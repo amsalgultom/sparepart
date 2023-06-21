@@ -46,7 +46,7 @@
 								<td>{{ 'Rp '.number_format($cart->subtotal, 0, ',', '.') }}</td>
 
 								<td>
-									<form action="{{ route('items.destroy') }}" method="POST">
+									<form action="{{ route('carts.destroy') }}" method="POST">
 										@csrf
 										<input type="hidden" name="id" value="{{ $cart->cart_id }}">
 										<input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
@@ -76,7 +76,7 @@
 </section>
 
 
-<form action="{{ route('items.update') }}" method="POST" style="display: none !important;">
+<form action="{{ route('carts.update') }}" method="POST" style="display: none !important;">
 	@csrf
 	<input type="hidden" name="update_id_cart" id="update_id_cart">
 	<input type="hidden" name="update_user_id" value="{{ Auth::user()->id }}">

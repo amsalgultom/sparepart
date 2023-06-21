@@ -37,10 +37,10 @@ Route::controller(LoginRegisterController::class)->group(function() {
 Route::resource('items', ItemController::class);
 Route::get('/itemdetails/{item}', [ItemController::class, 'itemDetails'])->name('items.details');
 
-Route::get('/carts/{id}', [CartController::class, 'index'])->name('items.carts');
-Route::post('/carts/store', [CartController::class, 'store'])->name('items.store');
-Route::post('/carts/destroy', [CartController::class, 'destroy'])->name('items.destroy');
-Route::post('/carts/update', [CartController::class, 'update'])->name('items.update');
+Route::get('/carts/{id}', [CartController::class, 'index'])->name('carts.index');
+Route::post('/carts/store', [CartController::class, 'store'])->name('carts.store');
+Route::post('/carts/destroy', [CartController::class, 'destroy'])->name('carts.destroy');
+Route::post('/carts/update', [CartController::class, 'update'])->name('carts.update');
 
 Route::get('/checkout/{id}', [OrderController::class, 'checkout'])->name('orders.checkout');
 Route::post('/checkout/store', [OrderController::class, 'store'])->name('orders.store');
