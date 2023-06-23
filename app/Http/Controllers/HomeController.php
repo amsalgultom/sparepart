@@ -9,7 +9,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $items = Item::all();
+        
+        $items = Item::orderBy('id', 'desc')->paginate('6') ;
         return view('pages.home', compact('items'));
     }
 }

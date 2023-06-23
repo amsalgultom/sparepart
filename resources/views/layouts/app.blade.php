@@ -21,6 +21,8 @@
     <!-- Custom styles for this page -->
     <link href="{{ asset('vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/datetime/1.4.1/css/dataTables.dateTime.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css" rel="stylesheet">
 
 </head>
 
@@ -76,9 +78,12 @@
         <script src="{{ asset('vendor/datatables/jquery.dataTables.min.js') }}"></script>
         <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
 
-        <!-- Page level custom scripts -->
-        <script src="{{ asset('js/demo/datatables-demo.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+        <!-- Page level custom scripts -->
+        @if (request()->segment(1) != 'reports')
+        <script src="{{ asset('js/demo/datatables-demo.js') }}"></script>
+        @endif
 
         @stack('scripts')
         <div id="script-container"></div>

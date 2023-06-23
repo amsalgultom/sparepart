@@ -167,6 +167,15 @@ class OrderController extends Controller
         return view('admin.orders', compact('myorders'))->with('no');
     }
 
+    /**
+     * Display a listing of the resource.
+     */
+    public function reports()
+    {
+        $myorders = Order::all();
+        return view('admin.reports', compact('myorders'))->with('no');
+    }
+
     
     /**
      * Display a dashboard to authenticated users.

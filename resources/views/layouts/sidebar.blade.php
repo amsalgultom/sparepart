@@ -24,10 +24,16 @@
     </li>
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item {{ (request()->segment(1) == 'sales') ? 'active' : '' }}">
+    <li class="nav-item {{ (request()->segment(1) == 'orders') ? 'active' : '' }}">
         <a class="nav-link" href="/orders">
             <i class="fa fa-cart-plus" aria-hidden="true"></i>
             <span>Penjulan</span></a>
+    </li>
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item {{ (request()->segment(1) == 'reports') ? 'active' : '' }}">
+        <a class="nav-link" href="/reports">
+            <i class="fa fa-file" aria-hidden="true"></i>
+            <span>Report Penjualan</span></a>
     </li>
 
     <!-- Divider -->

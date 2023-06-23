@@ -6,6 +6,19 @@
 <div class="page-banner">
 	<img src="{{ asset('assets/img/bg3.png') }}" alt="Page Banner" />
 </div>
+
+@if(!Auth::user())
+<section class="product-details section-padding-top">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<h2>Silahkan login terlebih dahulu</h2>
+				<p><a href="{{ route('login') }}">klik disini </a> untuk menuju halaman login</p><br><br>
+			</div>
+		</div>
+	</div>
+</section>
+@else
 <!-- page banner area end -->
 <!-- product details area start -->
 <section class="product-details section-padding-top">
@@ -69,4 +82,5 @@
 		</div>
 	</div>
 </section>
+@endif
 @endsection

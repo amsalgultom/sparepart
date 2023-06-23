@@ -18,6 +18,15 @@ class ItemController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     */
+    public function allItem()
+    {
+        $items = Item::all();
+        return view('pages.items',compact('items'));
+    }
+
+    /**
      * Show the form for creating a new resource.
      */
     public function create()

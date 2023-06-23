@@ -17,7 +17,7 @@
 											<img src="{{ asset('assets/img/slider/shape.png') }}" alt="" />
 										</div>
 										<h4 class="animated fadeIn">Selamat datan di web penjualan spartpart online</h4>
-										<a class="shop-btn animated fadeInUp" href="shop.html">Belanja Sekarang</a>
+										<a class="shop-btn animated fadeInUp" href="{{route('items.all')}}">Belanja Sekarang</a>
 									</div>
 								</div>
 							</div>
@@ -37,7 +37,7 @@
 											<img src="{{ asset('assets/img/slider/shape.png') }}" alt="" />
 										</div>
 										<h4 class="animated fadeIn">Supplier pertama dari Pabrik terpercaya.</h4>
-										<a class="shop-btn animated fadeInUp" href="shop.html">Belanja Sekarang</a>
+										<a class="shop-btn animated fadeInUp" href="{{route('items.all')}}">Belanja Sekarang</a>
 									</div>
 								</div>
 							</div>
@@ -54,7 +54,7 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-8 col-md-6 col-text-center">
 					<div class="section-title text-center">
-						<h3><span>Barang</span> Unggulan</h3>
+						<h3><span>Item Baru</span> Ditambahkan</h3>
 						<div class="shape">
 							<img src="{{ asset('assets/img/icon/t-shape.png') }}" alt="Title Shape" />
 						</div>
@@ -73,7 +73,7 @@
 											height="150" alt="" /></a>
 								</div>
 								<div class="product-title">
-									<a href="product-details.html">
+									<a href="itemdetails/{{ $item->id }}">
 										<h5>{{ $item->name }}</h5>
 									</a>
 									<p>Harga <span>{{ 'Rp '.number_format($item->price, 0, ',', '.') }}</span></p>
@@ -87,51 +87,6 @@
 		</div>
 	</section>
 	<!-- featured section end -->
-	<!-- sell-up section start -->
-	<section class="sell-up-area sell-up-one">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-4 ">
-					<div class="shadow-l-r">
-						<div class="sell-up-left">
-							<h2>Diskon <strong>20%</strong></h2>
-							<hr class="line" />
-							<ul class="clearfix">
-								<li>
-									<span></span> Barang Sparepart Ban Model Terbaru
-								</li>
-								<li>
-									<span></span> Barang Sparepart Ban Tahun Muda
-								</li>
-								<li>
-									<span></span> Barang Sparepart Ban Awet/Tahan Lama
-								</li>
-								<li>
-									<span></span> Barang Sparepart Ban Garansi 3 Bulan
-								</li>
-							</ul>
-							<a class="shop-btn" href="shop.html">Pesan Sekarang</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-offset-1 col-md-7">
-					<div class="sell-up-right">
-						<div class="single-sellup">
-							<a href="product-details.html"><img
-									src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//96/MTA-6913536/irc_irc_ban_luar_motor_80-90-17_ecotrax_nr96_tubeless_-bonus_pentil_tubeless-_full02_ryz05hcb.jpg"
-									height="343" /></a>
-						</div>
-						<div class="single-sellup">
-							<a href="product-details.html"><img
-									src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//96/MTA-6913536/irc_irc_ban_luar_motor_80-90-17_ecotrax_nr96_tubeless_-bonus_pentil_tubeless-_full02_ryz05hcb.jpg"
-									height="343" /></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- sell-up section end -->
 	<!-- quick view start -->
 	<div class="product-details quick-view modal animated zoomIn" id="quick-view">
 		<div class="container">

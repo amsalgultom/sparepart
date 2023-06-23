@@ -19,14 +19,6 @@
 						<div class="right floatright">
 							<ul>
 								<li>
-									<form action="#">
-										<button type="submit">
-											<i class="fa fa-search"></i>
-										</button>
-										<input type="search" placeholder="Search" />
-									</form>
-								</li>
-								<li>
 									<i class="fa fa-user"></i>
 									@if(Auth::user())
 									<a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
@@ -59,23 +51,23 @@
 										<a href="/">Beranda</a>
 									</li>
 									<li>
-										<a href="#">Tentang Kami</a>
+										<a href="/tentang-kami">Tentang Kami</a>
 									</li>
 									<li>
-										<a href="#">Produk</a>
+										<a href="/semua-item">Item Sparepart</a>
 									</li>
 									<li>
-										<a href="#">Kontak</a>
+										<a href="/kontak-kami">Kontak</a>
 									</li>
-									@if(Auth::user())
+									@if(Auth::user() && Auth::user()->role == 'client')
 									<li>
 										<a href="{{ route('orders.myorders',Auth::user()->id) }}">My Order</a>
 									</li>
-									@if(Auth::user()->role == 'admin')
+									@endif
+									@if(Auth::user() && Auth::user()->role == 'admin')
 									<li>
 										<a href="{{ route('admin.dashboard') }}">Admin Dashboard</a>
 									</li>
-									@endif
 									@endif
 								</ul>
 							</nav>

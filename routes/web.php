@@ -22,6 +22,13 @@ use App\Http\Controllers\HomeController;
 Route::get('/', function () {
     return view('pages.home');
 });
+Route::get('/tentang-kami', function () {
+    return view('pages.about');
+});
+Route::get('/kontak-kami', function () {
+    return view('pages.contact');
+});
+
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -35,6 +42,7 @@ Route::controller(LoginRegisterController::class)->group(function() {
 });
 
 Route::resource('items', ItemController::class);
+Route::get('/semua-item', [ItemController::class, 'allItem'])->name('items.all');
 Route::get('/itemdetails/{item}', [ItemController::class, 'itemDetails'])->name('items.details');
 
 Route::get('/carts/{id}', [CartController::class, 'index'])->name('carts.index');
@@ -48,6 +56,7 @@ Route::get('/myorders/{id}', [OrderController::class, 'myorders'])->name('orders
 Route::get('/myorders/show/{order}', [OrderController::class, 'show'])->name('orders.show');
 
 Route::get('/orders', [OrderController::class, 'index'])->name('admin.orders');
+Route::get('/reports', [OrderController::class, 'reports'])->name('admin.reports');
 Route::get('/orders/show/{order}', [OrderController::class, 'detailOrder'])->name('admin.detailorder');
 Route::get('/orders/confirm/{order}', [OrderController::class, 'confrimOrder'])->name('admin.confirmorder');
 Route::get('/orders/document/{order}', [OrderController::class, 'document'])->name('admin.documenorder');
