@@ -10,7 +10,7 @@
 <!-- cart page content section start -->
 <section class="cart-page section-padding">
 	<div class="container">
-		<form action="{{ route('orders.store') }}" method="POST" enctype="multipart/form-data">
+		<form action="{{ route('orders.store') }}" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
 			@csrf
 			<div class="row">
 				<div class="col-sm-6">

@@ -32,6 +32,8 @@ Route::get('/kontak-kami', function () {
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/myaccount/{user}', [HomeController::class, 'myaccount'])->name('user.myaccount');
+Route::put('/myaccount/update/{user}', [HomeController::class, 'update'])->name('user.update');
 Route::controller(LoginRegisterController::class)->group(function() {
     Route::get('/register', 'register')->name('register');
     Route::post('/store', 'store')->name('store');
@@ -59,6 +61,7 @@ Route::get('/orders', [OrderController::class, 'index'])->name('admin.orders');
 Route::get('/reports', [OrderController::class, 'reports'])->name('admin.reports');
 Route::get('/orders/show/{order}', [OrderController::class, 'detailOrder'])->name('admin.detailorder');
 Route::get('/orders/confirm/{order}', [OrderController::class, 'confrimOrder'])->name('admin.confirmorder');
+Route::get('/orders/confirmsuccess/{order}', [OrderController::class, 'confrimOrderSuccess'])->name('admin.confirmordersuccess');
 Route::get('/orders/document/{order}', [OrderController::class, 'document'])->name('admin.documenorder');
 Route::get('/dashboards', [OrderController::class, 'dashboard'])->name('admin.dashboard');
 

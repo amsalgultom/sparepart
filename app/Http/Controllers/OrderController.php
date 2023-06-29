@@ -207,6 +207,12 @@ class OrderController extends Controller
 
         return $pdf->download('document.pdf');
     }
+
+    public function confrimOrderSuccess($order){
+        Order::where('id', $order)->update(['status_id' => 3]);
+        $myorders = Order::all();
+        return view('admin.orders', compact('myorders'))->with('no');
+    }
 }
 
 

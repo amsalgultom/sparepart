@@ -54,14 +54,12 @@
                             <td>
                                 <form action="{{ route('items.destroy',$item->id) }}" method="POST">
 
-                                    <a class="btn btn-info btn-circle btn-lg" href="{{ route('items.show',$item->id) }}"><i class="fas fa-info-circle"></i></a>
-
-                                    <a class="btn btn-warning btn-circle btn-lg" href="{{ route('items.edit',$item->id) }}"><i class="fas fa-exclamation-triangle"></i></a>
+                                    <a class="btn btn-warning btn-circle btn-lg" href="{{ route('items.edit',$item->id) }}" title="edit"><i class="fas fa-exclamation-triangle"></i></a>
 
                                     @csrf
                                     @method('DELETE')
 
-                                    <button type="submit" class="btn btn-danger btn-circle btn-lg"><i class="fas fa-trash"></i></button>
+                                    <button type="submit" title="hapus" class="btn btn-danger btn-circle btn-lg"><i class="fas fa-trash"></i></button>
                                 </form>
                             </td>
                         </tr>

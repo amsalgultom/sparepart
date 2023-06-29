@@ -59,9 +59,12 @@
 									<li>
 										<a href="/kontak-kami">Kontak</a>
 									</li>
-									@if(Auth::user() && Auth::user()->role == 'client')
+									@if(Auth::user() && Auth::user()->role == 'customer')
 									<li>
 										<a href="{{ route('orders.myorders',Auth::user()->id) }}">My Order</a>
+									</li>
+									<li>
+										<a href="{{ route('user.myaccount',Auth::user()->id) }}">My Account</a>
 									</li>
 									@endif
 									@if(Auth::user() && Auth::user()->role == 'admin')

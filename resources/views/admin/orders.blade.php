@@ -57,13 +57,20 @@
                                     </span>
                                     <span class="text">Lakukan Konfirmasi</span>
                                 </a>
-                                @else
+                                @elseif($order->status_id == 2)
                                 <a href="{{ route('admin.documenorder',$order->id )}}" class="btn btn-info btn-icon-split mt-2">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-info-circle"></i>
                                     </span>
                                     <span class="text">Dokumen Order</span>
                                 </a>
+                                <a href="{{ route('admin.confirmordersuccess',$order->id )}}" class="btn btn-success btn-icon-split mt-2">
+                                    <span class="icon text-white-50">
+                                        <i class="fas fa-check"></i>
+                                    </span>
+                                    <span class="text">Selesaikan Order</span>
+                                </a>
+                                @else
                                 @endif
                             </td>
                         </tr>
