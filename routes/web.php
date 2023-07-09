@@ -64,6 +64,7 @@ Route::get('/orders/confirm/{order}', [OrderController::class, 'confrimOrder'])-
 Route::get('/orders/confirmsuccess/{order}', [OrderController::class, 'confrimOrderSuccess'])->name('admin.confirmordersuccess');
 Route::get('/orders/document/{order}', [OrderController::class, 'document'])->name('admin.documenorder');
 Route::get('/dashboards', [OrderController::class, 'dashboard'])->name('admin.dashboard');
+Route::post('/orders/resi', [OrderController::class, 'resi'])->name('admin.resi');
 
 Route::get('/get-origins', [ShippingController::class, 'getOrigins']);
 Route::get('/get-destinations', [ShippingController::class, 'getDestinations']);

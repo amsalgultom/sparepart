@@ -63,7 +63,13 @@
                                         <i class="fas fa-info-circle"></i>
                                     </span>
                                     <span class="text">Dokumen Order</span>
-                                </a>
+                                </a><br>
+                                <button type="button" class="btn btn-warning btn-icon-split mt-2" data-toggle="modal" data-target="#modalresi{{ $order->id }}">
+                                    <span class="icon text-white-50">
+                                        <i class="fas fa-flag"></i>
+                                    </span>
+                                    <span class="text">Input Resi</span>
+                                </button><br>
                                 <a href="{{ route('admin.confirmordersuccess',$order->id )}}" class="btn btn-success btn-icon-split mt-2">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-check"></i>
@@ -74,6 +80,32 @@
                                 @endif
                             </td>
                         </tr>
+
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="modalresi{{ $order->id }}" tabindex="-1" role="dialog" aria-labelledby="modalresi{{ $order->id }}Label" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modalresi{{ $order->id }}Label">Masukan No Resi Pengiriman</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <form action="{{ route('admin.resi') }}" method="post">
+                                    @csrf
+                                        <div class="modal-body">
+                                            <input type="hidden" name="order_id" value="{{ $order->id }}">
+                                            <input type="text" name="no_resi" class="form-control" value="{{ $order->no_resi }}">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary">Simpan</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.container-fluid -->
                         @endforeach
                     </tbody>
                 </table>
@@ -82,7 +114,7 @@
     </div>
 
 </div>
-<!-- /.container-fluid -->
+
 
 <!-- End of Main Content -->
 @endsection

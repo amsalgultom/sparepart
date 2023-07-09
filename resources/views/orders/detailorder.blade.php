@@ -33,8 +33,12 @@
                                                                                         [<span class="il">Order</span> #{{ $order->id }}] | {{ \Carbon\Carbon::parse($order->date)->format('d M Y') }}
                                                                                     </h2>
                                                                                     <h2 style="color:#7a6429;display:block;font-family:&quot;Helvetica Neue&quot;,Helvetica,Roboto,Arial,sans-serif;font-size:18px;font-weight:bold;line-height:130%;margin:0 0 18px;">
-                                                                                        Status : {{$order->status?->name}}
+                                                                                        Status : {{$order->status?->name}} <br>
+                                                                                        @if($order->no_resi != '')
+                                                                                        No Resi : {{$order->no_resi}}
+                                                                                        @endif
                                                                                     </h2>
+                                                                                    
                                                                                 </div>
                                                                                 <div style="margin-bottom:40px">
                                                                                     <table cellspacing="0" cellpadding="6" border="1" style="color:#636363;border:1px solid #e5e5e5;vertical-align:middle;width:100%;font-family:'Helvetica Neue',Helvetica,Roboto,Arial,sans-serif" width="100%">

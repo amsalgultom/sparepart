@@ -121,6 +121,9 @@
 
               <td>
                 OrderId #: {{ $order->id }}<br />
+                @if($order->no_resi != '')
+                No Resi : {{ $order->no_resi }}<br />
+                @endif
                 Date: {{ $date }}<br />
               </td>
             </tr>

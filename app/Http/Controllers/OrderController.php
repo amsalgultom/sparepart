@@ -213,6 +213,13 @@ class OrderController extends Controller
         $myorders = Order::all();
         return view('admin.orders', compact('myorders'))->with('no');
     }
+
+    public function resi(Request $request)
+    {
+
+        Order::where('id', $request->order_id)->update(['no_resi' => $request->no_resi]);
+        return redirect()->route('admin.orders')->with('success', 'Number Resi created successfully.');
+    }
 }
 
 
